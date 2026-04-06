@@ -6,8 +6,70 @@
   --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
 }
 
+:root {
+  --bg-main: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-input: #F7F7F9;
+  --bg-input-hover: #FFFFFF;
+  --bg-muted: #F1F3F5;
+  --text-main: #111111;
+  --text-secondary: #444444;
+  --text-muted: #999999;
+  --border-main: #EEEEEE;
+  --border-focus: #A78BFA;
+  --primary: #A78BFA;
+  --primary-hover: #8B5CF6;
+  --primary-light: #EDE9FE;
+  --primary-lighter: #F5F3FF;
+  --primary-gradient-start: #A78BFA;
+  --primary-gradient-end: #C4B5FD;
+}
+
+.dark {
+  --bg-main: #121212;
+  --bg-card: #1E1E1E;
+  --bg-input: #2C2C2C;
+  --bg-input-hover: #383838;
+  --bg-muted: #2A2A2A;
+  --text-main: #F3F4F6;
+  --text-secondary: #D1D5DB;
+  --text-muted: #9CA3AF;
+  --border-main: #374151;
+  --border-focus: #A78BFA;
+  --primary: #A78BFA;
+  --primary-hover: #C4B5FD;
+  --primary-light: #4C1D95;
+  --primary-lighter: #2E1065;
+  --primary-gradient-start: #8B5CF6;
+  --primary-gradient-end: #A78BFA;
+}
+
 body {
   font-family: var(--font-sans);
-  background-color: #FFFFFF;
-  color: #111111;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--border-main);
+  border-radius: 10px;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-main) transparent;
 }
